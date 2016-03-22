@@ -15,5 +15,6 @@ https://developers.google.com/cloud-messaging/android/client#get-config
 2: Update Gradle files according to official documentation
 
 https://developers.google.com/cloud-messaging/android/client#add-config
+
 https://developers.google.com/cloud-messaging/android/client#play-services
 
