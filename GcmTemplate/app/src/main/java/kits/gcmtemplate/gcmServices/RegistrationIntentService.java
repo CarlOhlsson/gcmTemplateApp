@@ -42,6 +42,7 @@ public class RegistrationIntentService extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
+        // We need somewhere to save if we got a token or not.
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
         try {
@@ -69,7 +70,7 @@ public class RegistrationIntentService extends IntentService {
      * @param token The new token.
      */
     private void sendRegistrationToServer(String token) {
-        System.out.println("Device token: " + token);
+        //System.out.println("Device token: " + token);
     }
 
     /**

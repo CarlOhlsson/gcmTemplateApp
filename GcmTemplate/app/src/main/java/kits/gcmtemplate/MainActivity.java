@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        // Will show a simple Snackbar when the registration token has been received.
+        // Can be completely removed if you want to.
         mRegistrationBroadcastReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(final Context context, Intent intent) {
@@ -48,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
+        // Making sure the received message end up in the UI.
         mMessageBroadcastReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
@@ -58,11 +61,14 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
+
+        // Start listening for messages.
         if (checkPlayServices()) {
             Intent intent = new Intent(this, RegistrationIntentService.class);
             startService(intent);
         }
     }
+
 
     @Override
     protected void onResume() {
@@ -78,6 +84,12 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
     }
 
+    /**
+     * Will check if Google Play Services is available.
+     * Can be completely removed if you do not want to make this check.
+     *
+     * @return true if supported
+     */
     private boolean checkPlayServices() {
         GoogleApiAvailability apiAvailability = GoogleApiAvailability.getInstance();
         int resultCode = apiAvailability.isGooglePlayServicesAvailable(this);

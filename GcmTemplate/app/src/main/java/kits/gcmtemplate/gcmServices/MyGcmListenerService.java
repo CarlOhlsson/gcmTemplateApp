@@ -63,6 +63,7 @@ public class MyGcmListenerService extends GcmListenerService {
 
     /**
      * Create and show a notification about the received message.
+     * Note that this implementation uses title and body sent with the message
      *
      * @param data GCM bundle received.
      */
