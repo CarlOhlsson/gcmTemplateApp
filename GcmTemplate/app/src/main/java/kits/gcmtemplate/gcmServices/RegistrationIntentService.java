@@ -70,7 +70,7 @@ public class RegistrationIntentService extends IntentService {
      * @param token The new token.
      */
     private void sendRegistrationToServer(String token) {
-        //System.out.println("Device token: " + token);
+        System.out.println("Device token: " + token);
     }
 
     /**
